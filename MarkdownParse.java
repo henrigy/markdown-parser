@@ -18,6 +18,10 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            //fixed infinite loop due to extra line in test-file1.md
+            if (markdown.length()- 2 <= currentIndex){
+                break;
+        }
         }
 
         return toReturn;
