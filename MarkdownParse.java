@@ -1,6 +1,7 @@
 //https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
 
 import java.io.IOException;
+import java.nio.channels.ClosedByInterruptException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             
             //fixed infinite loop due to no link in test-file3.md
-            if (openParen == -1 || closeParen == -1){
+            if (openParen == -1 || closeParen == -1 || openBracket == -1 || closeBracket == -1){
                 break;
             }
 
