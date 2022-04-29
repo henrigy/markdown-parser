@@ -60,7 +60,7 @@ public class MarkdownParseTest {
         ArrayList<String> result = test1.getLinks(content);
         ArrayList<String> expected = new ArrayList<>();
         expected.add("https://something.com");
-        expected.add("some-thing.asdf");
+        expected.add("some--thing.asdf");
         expected.add("some-thing.asdf");
         assertEquals(expected, result);
     }
