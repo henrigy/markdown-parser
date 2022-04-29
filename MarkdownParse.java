@@ -29,6 +29,11 @@ public class MarkdownParse {
                 openParen = markdown.indexOf("(", currentIndex); 
                 closeParen = markdown.indexOf(")", currentIndex);
             }
+
+            //if there is no link but there are open and closed parentheses
+            else if(Math.abs(openParen-closeParen) == 1){
+                break;
+            }
             
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
