@@ -63,4 +63,17 @@ public class MarkdownParseTest {
         expected.add("some-thing.asdf");
         assertEquals(expected, result);
     }
+
+    @Test
+    public void getLinksFile5() throws IOException {
+        MarkdownParse test1 = new MarkdownParse();
+        Path fileName = Path.of("test-file5.md");
+        String content = Files.readString(fileName);
+
+        ArrayList<String> result = test1.getLinks(content);
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("https://something.com");
+        expected.add("some-thing.asdf");
+        assertEquals(expected, result);
+    }
 }
