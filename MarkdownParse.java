@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
-        ArrayList<String> toReturn = new ArrayList<>();
+        ArrayList<String> toReturn = new ArrayList<>(); 
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
@@ -41,7 +41,7 @@ public class MarkdownParse {
             //fixed infinite loop due to extra line in test-file2.md
             if (markdown.length()- 2 <= currentIndex){
                 break;
-        }
+            }
         }
 
         return toReturn;
